@@ -12,7 +12,7 @@
 
 ## Load Python 3.6.3
 echo "Activating Python 3.6.3..."
-module load python/3.6.1
+module load python/3.6.3
 module load anaconda/3.6
 
 
