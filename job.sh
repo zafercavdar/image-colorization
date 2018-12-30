@@ -10,4 +10,4 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=zcavdar14@ku.edu.tr
 
-python run.py
+python3 run.py
