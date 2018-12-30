@@ -27,19 +27,11 @@
 #
 SBATCH --job-name=cnn-image-colorization
 SBATCH --nodes=1
-SBATCH --ntasks-per-node=32
+SBATCH --ntasks-per-node=45
 SBATCH --partition=mid
 SBATCH --time=23:59:59
 SBATCH --output=model.out
 SBATCH --mail-type=ALL
 SBATCH --mail-user=zcavdar14@ku.edu.tr
-
-
-echo "Setting stack size to unlimited..."
-ulimit -s unlimited
-ulimit -l unlimited
-ulimit -a
-echo
-echo "======================================================================================"
 
 python run.py
