@@ -1,3 +1,9 @@
 .DS_Store
 data/
 .vscode
+testSetPlaces205_resize.tar.gz
+testSetPlaces205_resize/
+training/
+validation/
+*.pyc
+*.pth
