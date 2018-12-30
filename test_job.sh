@@ -13,8 +13,9 @@
 ## Load Python 3.6.3
 echo "Activating Python 3.6.3..."
 module load python/3.6.3
-module load anaconda/3.6
+pip3 install -r requirements.txt
 
+# module load anaconda/3.6
+# while read requirement; do conda install --yes $requirement; done < requirements.txt
 
-while read requirement; do conda install --yes $requirement; done < requirements.txt
 python3 test.py
