@@ -4,5 +4,8 @@ install_deps:
 submit:
 	sbatch job.sh
 
+submit-test:
+	sbatch test_job.sh
+
 run-local:
 	python3 run.py
