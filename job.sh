@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # 
 # CompecTA (c) 2017
 #
@@ -24,7 +24,6 @@
 #      sbatch slurm_test_submit.sh
 
 # -= Resources =-
-#
 SBATCH --job-name=cnn-image-colorization
 SBATCH --gres=gpu:8
 SBATCH --nodes=1
