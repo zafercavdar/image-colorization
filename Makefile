@@ -3,3 +3,6 @@ install_deps:
 
 submit:
 	sbatch job.sh
+
+run-local:
+	python3 run.py
