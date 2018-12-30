@@ -36,4 +36,4 @@
 # SBATCH --mail-user=zcavdar14@ku.edu.tr
 
 pip3 install -r requirements.txt
-python run.py
+python test.py
