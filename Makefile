@@ -1,5 +1,5 @@
 install_deps:
-	pip3 install -r requirements.py
+	pip3 install -r requirements.txt
 
 submit:
 	sbatch job.sh
