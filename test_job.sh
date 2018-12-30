@@ -7,7 +7,6 @@
 #SBATCH --partition=short
 #SBATCH --time=60
 #SBATCH --output=output-%j.out
-#SBATCH --mail-type=ALL
 #SBATCH --mail-user=zcavdar14@ku.edu.tr
 
 ## Load Python 3.6.3
