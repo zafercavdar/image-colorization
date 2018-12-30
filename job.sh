@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:8
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
-#SBATCH --partition=mid
+#SBATCH --partition=short
 #SBATCH --time=23:59:59
 #SBATCH --output=model.out
 #SBATCH --mail-type=ALL
