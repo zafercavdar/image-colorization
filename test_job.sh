@@ -10,11 +10,17 @@
 #SBATCH --mail-user=zcavdar14@ku.edu.tr
 
 ## Load Python 3.6.3
-echo "Activating Python 3.6.3..."
-module load python/3.6.3
-pip3 install -r requirements.txt
+echo "Activating Anaconda 3.6..."
+module load anaconda/3.6
 
-# module load anaconda/3.6
-# while read requirement; do conda install --yes $requirement; done < requirements.txt
+echo "Creating env-cnn environment"
+conda create --yes --name env-cnn python=3.6
 
-python3 test.py
+echo "Installing dependencies"
+while read requirement; do conda install --yes --name env-cnn $requirement; done < requirements.txt
+
+echo "Activating env-cnn environment"
+source activate env-cnn
+
+echo "Running test.py"
+python test.py
