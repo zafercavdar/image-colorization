@@ -16,4 +16,4 @@ module load python/3.6.3
 source ../408-env/bin/activate
 
 echo "Running test.py"
-python test.py
+python3 test.py
