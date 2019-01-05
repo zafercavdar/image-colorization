@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=cnn-image-colorization
-#SBATCH --gres=tesla_k80:1
+#SBATCH --gres=gpu:4
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=short
