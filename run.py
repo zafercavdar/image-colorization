@@ -25,14 +25,14 @@ if is_gpu_available():
 # Training
 train_transforms = transforms.Compose(
     [transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip()])
-train_imagefolder = GrayscaleImageFolder('./training/', train_transforms)
+train_imagefolder = GrayscaleImageFolder('./training/test5000/', train_transforms)
 train_loader = torch.utils.data.DataLoader(
     train_imagefolder, batch_size=64, shuffle=True)
 
 # Validation
 val_transforms = transforms.Compose(
     [transforms.Resize(256), transforms.CenterCrop(224)])
-val_imagefolder = GrayscaleImageFolder('./validation/', val_transforms)
+val_imagefolder = GrayscaleImageFolder('./validation/set200/', val_transforms)
 val_loader = torch.utils.data.DataLoader(
     val_imagefolder, batch_size=64, shuffle=False)
 
@@ -41,19 +41,18 @@ os.makedirs('outputs/color', exist_ok=True)
 os.makedirs('outputs/gray', exist_ok=True)
 os.makedirs('checkpoints', exist_ok=True)
 save_images = True
-best_losses = 0.005
+best_losses = 100000
 epochs = 100
 
 # Train model
 for epoch in range(epochs):
     # Train for one epoch, then validate
     train(train_loader, model, criterion, optimizer, epoch)
-    torch.save(model.state_dict(), 'checkpoints/model-epoch-{}.pth'.format(epoch + 1))
 
-with torch.no_grad():
-    losses = validate(val_loader, model, criterion, save_images, epoch)
+    with torch.no_grad():
+        losses = validate(val_loader, model, criterion, save_images, epoch)
 
-# Save checkpoint and replace old best model if current model is better
-# if losses < best_losses:
-# best_losses = losses
-torch.save(model.state_dict(), 'checkpoints/model-epoch-{}-losses-{:.3f}.pth'.format(epoch + 1, losses))
+    # Save checkpoint and replace old best model if current model is better
+    if losses < best_losses:
+        best_losses = losses
+        torch.save(model.state_dict(), 'checkpoints/model5000-epoch-{}-losses-{:.3f}.pth'.format(epoch + 1, losses))
