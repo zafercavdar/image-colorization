@@ -4,8 +4,8 @@
 #SBATCH --gres=gpu:4
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --partition=short
-#SBATCH --time=60
+#SBATCH --partition=mid
+#SBATCH --time=23:59:59
 #SBATCH --output=output-%j.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=zcavdar14@ku.edu.tr
