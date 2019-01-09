@@ -5,10 +5,7 @@ from skimage.color import lab2rgb
 # import matplotlib.pyplot as plt
 
 
-class AverageMeter(object):
-    '''
-    A handy class from the PyTorch ImageNet tutorial
-    '''
+class RunningAverage(object):
 
     def __init__(self):
         self.reset()

@@ -1,5 +1,5 @@
 import time
-from .helpers import AverageMeter, is_gpu_available
+from .helpers import RunningAverage, is_gpu_available
 
 
 def train(train_loader, model, criterion, optimizer, epoch):
@@ -7,7 +7,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
     model.train()
 
     # Prepare value counters and timers
-    batch_time, data_time, losses = AverageMeter(), AverageMeter(), AverageMeter()
+    batch_time, data_time, losses = RunningAverage(), RunningAverage(), RunningAverage()
 
     end = time.time()
     for i, (input_gray, input_ab, target) in enumerate(train_loader):
