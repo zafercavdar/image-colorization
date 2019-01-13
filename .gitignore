@@ -6,4 +6,5 @@ testSetPlaces205_resize/
 training/
 validation/
 *.pyc
-*.pth
+checkpoints/*/*.pth
+*.zip
