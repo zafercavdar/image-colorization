@@ -9,3 +9,6 @@ submit-test:
 
 run-local:
 	python3 run.py
+
+test-local:
+	python3 demo.py
