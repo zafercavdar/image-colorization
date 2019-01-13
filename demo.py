@@ -22,7 +22,7 @@ if is_gpu_available():
     model = model.cuda()
 
 # Load model
-pretrained = torch.load('model41k-epoch-62-losses-0.002.pth', map_location=lambda storage, loc: storage)
+pretrained = torch.load('checkpoints/model41k-epoch-62-losses-0.002.pth', map_location=lambda storage, loc: storage)
 model.load_state_dict(pretrained)
 
 # create output folders
